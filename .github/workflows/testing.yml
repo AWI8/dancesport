@@ -11,6 +11,6 @@ jobs:
       - name: install devs
         run: |
           cd front/
-          yarn ci
+          npm ci
       - name: Test application
         run: yarn run e2eh
