@@ -1,0 +1,14 @@
+name: Testing Next app accessability
+run-name: My test with cypress
+on : [workflow_dispatch]
+jobs:
+  Test-accessability:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "It was automatically triggered"
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: install devs
+        run: yarn ci
+      - name: Test application
+        run: yarn run e2eh
