@@ -9,7 +9,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Change directory
-      - run: cd front/
+        run: cd front/
       - name: install devs
         run: yarn ci
       - name: Test application
