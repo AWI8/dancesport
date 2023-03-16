@@ -13,4 +13,6 @@ jobs:
           cd front/
           yarn install --frozen-lockfile
       - name: Test application
-        run: yarn run e2eh
+        run: |
+          cd front/
+          yarn run e2eh
