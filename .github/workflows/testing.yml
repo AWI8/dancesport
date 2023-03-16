@@ -9,6 +9,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: install devs
-        run: cd front/ yarn ci
+        run: |
+          cd front/
+          yarn ci
       - name: Test application
-        run: cd front/ yarn run e2eh
+        run: yarn run e2eh
