@@ -11,6 +11,6 @@ jobs:
       - name: install devs
         run: |
           cd front/
-          npm ci
+          yarn install --frozen-lockfile
       - name: Test application
         run: yarn run e2eh
