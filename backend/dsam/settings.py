@@ -26,7 +26,9 @@ SECRET_KEY = enviroment.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://localhost:3000',
+    'localhost'
+]
 
 
 # Application definition
@@ -38,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'crm_for_next',
-    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -54,10 +56,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITLIST = [
-    "http://localhost:3000",
-    "http://localhost:8000"
-]
 
 ROOT_URLCONF = 'dsam.urls'
 
@@ -139,3 +137,22 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_METHODS = [
+    'POST',
+    'GET'
+]
+
+CORS_ALLOW_HEADERS = [
+    'Content-Type',
+    'Access-Control-Allow-Origin',
+    'Access-Control-Allow-Methods',
+    'X-CSRFToken',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:3000',
+    'http://localhost:3000',
+    'http://127.0.0.1:8000',
+    'http://localhost:8000'
+]
