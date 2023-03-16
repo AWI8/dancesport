@@ -1,6 +1,6 @@
 name: Testing Next app accessability
 run-name: My test with cypress
-on : [workflow_dispatch]
+on : [push]
 jobs:
   Test-accessability:
     runs-on: ubuntu-latest
