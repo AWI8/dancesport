@@ -9,5 +9,4 @@ describe('<FeedbackForm />', () => {
     cy.get('input[name="tel"]').type('dasss');
     cy.get('button').click
   });
-  
 });
