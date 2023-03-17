@@ -48,7 +48,7 @@ function FeedbackForm() {
           </div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-800">Номер телефона:</label>
           <div className="mt-1">
-            <input id="tel" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} name="tel" type="tel" className="mb-3 w-full border border-gray-500 px-3 py-2 rounded-lg shadow-sm" required />
+            <input id="tel" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} name="tel" type="number" className="mb-3 w-full border border-gray-500 px-3 py-2 rounded-lg shadow-sm" required />
           </div>
           <div className={`mt-1 pb-6 transition-transform duration-300 ${btnScale}`}>
             <button type="submit" className="w-full bg-orange-400 text-white hover:shadow-lg px-3 py-2 rounded-lg shadow-sm">Оставить заявку</button>

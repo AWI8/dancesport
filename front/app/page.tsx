@@ -1,4 +1,3 @@
-'use client'
 import Greetings from "../components/greetings";
 import About from "../components/about";
 import Value from "../components/value";
