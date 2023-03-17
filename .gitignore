@@ -140,3 +140,6 @@ __pycache__/
 *.py[cod]
 
 venv/
+
+# Temporary ignored
+front/cypress/e2e/FormWorks.cy.tsx
