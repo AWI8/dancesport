@@ -10,8 +10,10 @@ export default function RootLayout({
     <html lang="ru">
       <head />
       <body>
-        {children}
+        <main className='h-screen'>
+          {children}
         <Footer />
+        </main>
       </body>
     </html>
   )

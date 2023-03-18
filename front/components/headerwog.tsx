@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 
-function Header() {
+function Header_wog() {
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -11,7 +11,7 @@ function Header() {
   }
 
   return (
-    <header className={`md:flex z-40 justify-between items-center h-24 w-full absolute md:bg-transparent transition duration-500 ${showMenu ? 'bg-gray-900 transition duration-500' : 'delay-500'}} text-white`}>
+    <header className={`md:flex z-40 justify-between items-center h-24 w-full relative bg-gray-900 text-white`}>
       <div className="flex justify-between items-center h-full">
         <Link href={'/'} className="font-bold mx-6">DanceSport.AM</Link>
         <button className="md:hidden px-3" onClick={toggleMenu}>
@@ -33,4 +33,4 @@ function Header() {
   )
 }
 
-export default Header;
+export default Header_wog;

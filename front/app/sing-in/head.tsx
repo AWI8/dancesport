@@ -1,9 +1,9 @@
 export default function Head(){
     return(
         <>
-            <title>DSAM - main</title>
+            <title>DSAM - sing-in</title>
             <meta content="width=device-width, initial-scale=1" name="viewport" />
-            <link rel="shortcut icon" href="faviacon.ico" />
+            <link rel="icon" href="" />
         </>
     );
 }
