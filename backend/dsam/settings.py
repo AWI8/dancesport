@@ -27,7 +27,8 @@ SECRET_KEY = enviroment.SECRET_KEY
 DEBUG = True
 
 ALLOWED_HOSTS = ['http://localhost:3000',
-    'localhost'
+    'localhost',
+    '127.0.0.1'
 ]
 
 
