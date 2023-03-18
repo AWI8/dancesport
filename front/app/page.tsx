@@ -10,12 +10,10 @@ function HomePage(){
         <>
         <Header />
         <Greetings />
-        <main>
-            <About />
-            <Value />
-            <Services />
-            <Formplate />
-        </main>
+        <About />
+        <Value />
+        <Services />
+        <Formplate />
         </>
     )
 }
