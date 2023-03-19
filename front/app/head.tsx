@@ -3,7 +3,7 @@ export default function Head(){
         <>
             <title>DSAM - main</title>
             <meta content="width=device-width, initial-scale=1" name="viewport" />
-            <link rel="shortcut icon" href="faviacon.ico" />
+            <link rel="shortcut icon" href="" />
         </>
     );
 }
