@@ -9,9 +9,9 @@ jobs:
   Back-up:
     runs-on: ubuntu-latest
     env:
-      SECRET_KEY = ${{ secrets.SECRET_KEY }}
-      TG_BOT_TOKEN = ${{ secrets.TG_BOT_TOKEN }}
-      TG_CHAT_ID = ${{ secrets.TG_CHAT_ID }}
+      SECRET_KEY : ${{ secrets.SECRET_KEY }}
+      TG_BOT_TOKEN : ${{ secrets.TG_BOT_TOKEN }}
+      TG_CHAT_ID : ${{ secrets.TG_CHAT_ID }}
     steps:
       - run: echo "First of all start django"
       - name: Check out repository
