@@ -20,7 +20,7 @@ jobs:
         run: |
           cd backend/
           pip install -r requirements
-          python manage.py runserver
+          nohup python manage.py runserver 127.0.0.1:8000 &
           
 
   Test-accessability:
