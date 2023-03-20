@@ -22,8 +22,8 @@ class Feedback(models.Model):
         super().save(*args, **kwargs)
 
         # Send a notification via Telegram
-        bot_token = enviroment.bot_token
-        chat_id = enviroment.chat_id
+        bot_token = os.environ.get('TG_BOT_TOKEN')
+        chat_id = os.environ.get('TG_CHAT_ID')
         message_text = f"New feedback from: {self.name} - {self.phone_number}"
         response = requests.post(
             f"https://api.telegram.org/bot{bot_token}/sendMessage",
