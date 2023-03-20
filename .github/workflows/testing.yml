@@ -6,7 +6,25 @@ on:
       - "develop"
       
 jobs:
+  Back-up:
+    runs-on: ubuntu-latest
+    env:
+      SECRET_KEY = ${{ secrets.SECRET_KEY }}
+      TG_BOT_TOKEN = ${{ secrets.TG_BOT_TOKEN }}
+      TG_CHAT_ID = ${{ secrets.TG_CHAT_ID }}
+    steps:
+      - run: echo "First of all start django"
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: install packages and start
+        run: |
+          cd backend/
+          pip install -r requirements
+          python manage.py runserver
+          
+
   Test-accessability:
+    needs: Back-up
     runs-on: ubuntu-latest
     steps:
       - run: echo "It was automatically triggered"
