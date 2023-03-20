@@ -2,7 +2,7 @@ import datetime
 import requests
 from django.db import models
 
-import enviroment
+# import enviroment
 
 import telegram
 
