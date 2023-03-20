@@ -30,7 +30,7 @@ DEBUG = True
 if DEBUG:
     try:
         import enviroment
-    except e:
+    except:
         'no file with "enviroment" name'
 
 ALLOWED_HOSTS = ['http://localhost:3000',
