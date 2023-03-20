@@ -28,7 +28,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 if DEBUG:
-    import enviroment
+    try:
+        import enviroment
+    except e:
+        'no file with "enviroment" name'
 
 ALLOWED_HOSTS = ['http://localhost:3000',
     'localhost',
