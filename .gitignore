@@ -145,3 +145,4 @@ venv/
 
 
 # Temporary ignored
+nohup.out

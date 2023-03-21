@@ -1,0 +1,17 @@
+services: 
+  drf:
+    environment:
+      - SECRET_KEY=SECRET_KEY
+      - TG_BOT_TOKEN=bot_token
+      - TG_CHAT_ID=chat_id
+    env_file:
+      - ./.env
+    build: backend 
+    ports: 
+      - '8000:8000'
+
+  njs_client:
+    build: front
+    ports:
+      - '3000:3000'
+

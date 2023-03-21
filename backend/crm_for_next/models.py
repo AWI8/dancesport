@@ -1,5 +1,5 @@
 import datetime
-import requests
+import requests, os
 from django.db import models
 
 # import enviroment
