@@ -1,10 +1,7 @@
-import datetime
-import requests, os
+import requests, os, datetime
+
 from django.db import models
 
-# import enviroment
-
-import telegram
 
 class Feedback(models.Model):
     name = models.CharField(max_length=100)
@@ -22,10 +19,8 @@ class Feedback(models.Model):
         super().save(*args, **kwargs)
 
         # Send a notification via Telegram
-        bot_token = os.environ.get('TG_BOT_TOKEN')
-        chat_id = os.environ.get('TG_CHAT_ID')
-        # bot_token = enviroment.bot_token
-        # chat_id = enviroment.chat_id
+        bot_token = os.environ.get('BOT_TOKEN')
+        chat_id = os.environ.get('CHAT_ID')
         message_text = f"New feedback from: {self.name} - {self.phone_number}"
         response = requests.post(
             f"https://api.telegram.org/bot{bot_token}/sendMessage",
