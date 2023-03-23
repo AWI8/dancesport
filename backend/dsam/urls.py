@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api_fdsam/', include('crm_for_next.urls'))
+    path('api-auth/', include('rest_framework.urls')), # родной drf url, не знаю пока зачем он тут
+    path('api_fdsam/', include('crm_for_next.urls')) # url для доступа к api
 ]

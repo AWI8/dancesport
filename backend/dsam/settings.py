@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'rest_framework',
-    'crm_for_next',
+    'rest_framework', # Rest API в django
+    'crm_for_next', # приложение а-ля crm, папка в корне ./backend<-
 ]
 
 MIDDLEWARE = [

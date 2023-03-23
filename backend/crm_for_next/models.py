@@ -4,14 +4,17 @@ from django.db import models
 
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=20)
+    """
+    Соответственно классмодели Feedback
+    """
+    name = models.CharField(max_length=100) # Поле получаемое в api
+    phone_number = models.CharField(max_length=20) # Поле получаемое в api
 
-    create_date = models.DateField(auto_now=True)
+    create_date = models.DateField(auto_now=True) # Автополя 
     create_time = models.TimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.name 
         
 
     def save(self, *args, **kwargs):
