@@ -1,7 +1,16 @@
 services: 
+  db:
+    image: postgres:15.2-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=pg_cheh
+      - POSTGRES_PASSWORD=pgdb4231
+      - POSTGRES_DB=dsam
+
   drf:
     env_file:
-      - ./.env
+      - ./.env.dev
     build: backend 
     ports: 
       - '8000:8000'
@@ -10,4 +19,7 @@ services:
     build: front
     ports:
       - '3000:3000'
+
+volumes:
+  postgres_data:
 
