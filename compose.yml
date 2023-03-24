@@ -4,7 +4,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=pg_cheh
+      - POSTGRES_USER=chehpg
       - POSTGRES_PASSWORD=pgdb4231
       - POSTGRES_DB=dsam
 
