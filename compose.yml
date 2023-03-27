@@ -3,23 +3,42 @@ services:
     image: postgres:15.2-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_USER=chehpg
-      - POSTGRES_PASSWORD=pgdb4231
-      - POSTGRES_DB=dsam
+    env_file:
+      - ./.env.dev
 
   drf:
     env_file:
       - ./.env.dev
-    build: backend 
-    ports: 
-      - '8000:8000'
+    build: backend
+    depends_on:
+      - db
+    # ports: 
+    #   - '8000:8000'
+    expose:
+      - 8000
 
   njs_client:
     build: front
+    depends_on:
+      - db
+    volumes:
+      - staticbuild:/app/out/
+    # ports:          Если DRF внутри то снаружи 3000 не достучится
+    #   - '3000:3000' Хочу попробывать запустить весь проект с тестами вместо деплоя
+    expose:
+      - 3000
+
+  nginx:
+    image: nginx
+    build: 
+      context: ./deployment/nginx/
+    depends_on:
+      - drf
+      - njs_client
     ports:
-      - '3000:3000'
+      - 8080:80
 
 volumes:
   postgres_data:
+  staticbuild:
 
