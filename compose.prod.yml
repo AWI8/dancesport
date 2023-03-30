@@ -10,14 +10,11 @@ services:
     env_file:
       - ./.env.dev
     build: ./backend
-    volumes:
-      - ./backend/:/usr/src/app/
+    command: gunicorn dsam.wsgi:application --bind 0.0.0.0:8000
     depends_on:
       - db
-    ports: 
-      - '8000:8000'
-    # expose:
-    #   - 8000
+    expose:
+      - 8000
 
   njs_client:
     build: front
@@ -38,7 +35,7 @@ services:
       - drf
       - njs_client
     ports:
-      - 8080:80
+    - 80:80
 
 volumes:
   postgres_data:
