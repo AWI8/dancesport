@@ -27,16 +27,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# if DEBUG:
-#     try:
-#         import enviroment
-#     except:
-#         'no file with "enviroment" name'
 
-ALLOWED_HOSTS = ['http://localhost:3000',
+ALLOWED_HOSTS = [
+    'http://localhost:3000',
     'localhost',
     '127.0.0.1',
-    '0.0.0.0'
+    '0.0.0.0',
+    'dancesport.local'
 ]
 
 
