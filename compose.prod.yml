@@ -22,10 +22,6 @@ services:
     build: front
     depends_on:
       - db
-    volumes:
-      - staticbuild:/app/out/
-    # ports:          
-    #   - '3000:3000'
     expose:
       - 3000
 
@@ -43,6 +39,5 @@ services:
 
 volumes:
   postgres_data:
-  staticbuild:
   static_volume:
 
