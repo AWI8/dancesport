@@ -1,5 +1,11 @@
 FROM python:3.10-alpine
-WORKDIR /usr/src/backend
+
+ENV HOME=/usr/src
+ENV APP_HOME=/usr/src/backend
+RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/staticfiles
+WORKDIR $APP_HOME
+
 # install psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev

@@ -15,13 +15,13 @@ function FeedbackForm() {
     const csrfToken = Cookies.get('csrftoken');
     const headers = {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'http://localhost:8000',
+      'Access-Control-Allow-Origin': 'http://dancesport.local',
       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       'X-CSRFToken':csrfToken,
     };
     
     axios
-      .post("http://localhost:8000/api_fdsam/feedback/create/", data,{headers})
+      .post("http://dancesport.local/api_fdsam/feedback/create/", data,{headers})
       .then((response) => {
         setBtnScale("scale-105");
         setTimeout(() => setBtnScale("scale-100"), 300);

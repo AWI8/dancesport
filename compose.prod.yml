@@ -11,6 +11,8 @@ services:
       - ./.env.dev
     build: ./backend
     command: gunicorn dsam.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/usr/src/backend/staticfiles
     depends_on:
       - db
     expose:
@@ -31,6 +33,8 @@ services:
     image: nginx
     build: 
       context: ./deployment/nginx/
+    volumes:
+      - static_volume:/usr/src/backend/staticfiles
     depends_on:
       - drf
       - njs_client
@@ -40,4 +44,5 @@ services:
 volumes:
   postgres_data:
   staticbuild:
+  static_volume:
 
