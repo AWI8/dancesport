@@ -1,6 +1,7 @@
 'use client'
 import FeedbackForm from "./form"
 // import Countdown from "./timer"
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 function Formplate() {
   return (
@@ -11,7 +12,10 @@ function Formplate() {
                 <p className="text-start text-2xl font-thin py-4">Открыт набор в детскую группу от 4-6 лет. <br /> Успейте на запись!</p>
             {/* <Countdown /> */}
             </div>
-            <FeedbackForm />
+            <ReCaptchaProvider reCaptchaKey = {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
+              <FeedbackForm />
+            </ReCaptchaProvider>
+            
         </div>
     </div>
   )

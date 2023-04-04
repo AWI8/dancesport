@@ -47,9 +47,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'captcha',
     'rest_framework', # Rest API в django
     'crm_for_next', # приложение а-ля crm, папка в корне ./backend<-
 ]
+
+RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123'
+RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

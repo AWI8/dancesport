@@ -1,16 +1,20 @@
 import { useState } from "react"
 import axios from "axios";
 import Cookies from 'js-cookie';
+import { useReCaptcha } from "next-recaptcha-v3";
 
 function FeedbackForm() {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [btnScale, setBtnScale] = useState("scale-100");
 
-  const handleSubmit = (event: { preventDefault: () => void; }) => {
+  const { executeRecaptcha } = useReCaptcha();
+
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
-    const data = { name, phone_number: phoneNumber };
+    const token = await executeRecaptcha("form_submit");
+    const data = { name, phone_number: phoneNumber, recaptcha_token: token  };
 
     const csrfToken = Cookies.get('csrftoken');
     const headers = {
