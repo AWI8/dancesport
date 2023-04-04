@@ -13,7 +13,7 @@ function Value() {
                     <ul className="lg:flex lg:space-x-14 justify-between">
                         <li className="my-6 lg:w-1/3">
                             <div className="flex justify-center">
-                                <img src="/svg/kideducate_honor.svg" className="w-24 h-24" alt="trophy cup icon"/>
+                                <img src="/svg/kideducate_honor.svg" className="w-24 h-24" alt="Наградной кубок - трофей"/>
                             </div>
                             <h2 className="text-center text-xl p-3 font-bold">Самореализация</h2>
                             <p className="text-center">Участие в соревнованиях и достижение
@@ -21,14 +21,14 @@ function Value() {
                         </li>
                         <li className="my-6 lg:w-1/3">
                             <div className="flex justify-center">
-                                <img src="/svg/re_man.svg" className="w-24 h-24" alt="man icon"/>
+                                <img src="/svg/re_man.svg" className="w-24 h-24" alt="Иконка человека, танцора"/>
                             </div>
                             <h2 className="text-center text-xl p-3 font-bold">Индивидуальный подход</h2>
                             <p className="text-center">Каждому ребенку уделяется особых подход для комфортного обучения и развития</p>
                         </li>
                         <li className="my-6 lg:w-1/3">
                             <div className="flex justify-center">
-                                <img src="/svg/Event_agency_miracle.svg" className="w-24 h-24" alt="magic wand icon"/>
+                                <img src="/svg/Event_agency_miracle.svg" className="w-24 h-24" alt="Магия танца. Волшебная палочка"/>
                             </div>
                             <h2 className="text-center text-xl p-3 font-bold">Новыекачества</h2>
                             <p className="text-center">Развитие новых физических и психоэмоциональных качеств. А именно: выносливость гибкость осанка, самоуверенность и другие</p>

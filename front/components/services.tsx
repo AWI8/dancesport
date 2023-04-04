@@ -11,7 +11,7 @@ function Services() {
                 <div className="md:w-5/6 p-3 flex justify-center">
                     <div className="md:flex lg:w-auto w-5/6 items-center">
                         <div className="md:w-1/2 flex justify-center items-center">
-                            <img className="w-5/6" src="/images/image.jpg" alt="random image"/>
+                            <img className="w-5/6" src="/images/image.jpg" alt="Групповые занятия танцев"/>
                         </div>
                         
                         <div className="text-start py-4 md:w-1/2 md:p-6">
@@ -25,7 +25,7 @@ function Services() {
                 <div className="md:w-5/6 p-3 flex justify-center">
                     <div className="md:flex lg:w-auto w-5/6 items-center">
                         <div className="md:w-1/2 flex order-2 justify-center items-center">
-                            <img className="w-5/6" src="/images/image_per.jpg" alt="random image"/>
+                            <img className="w-5/6" src="/images/image_per.jpg" alt="Индивидуальные занятия с хореографом"/>
                         </div>
                         <div className="text-start py-4 md:w-1/2 md:p-6 order-1">
                             <h3 className="text-2xl pb-2 font-bold">Индивидуальные занятия</h3>
@@ -39,7 +39,7 @@ function Services() {
                 <div className="md:w-5/6 p-3 flex justify-center">
                     <div className="md:flex lg:w-auto w-5/6 items-center justify-center">
                         <div className="md:w-1/2 flex justify-center items-center">
-                            <img className="w-5/6" src="/images/comp.jpg" alt="random image"/>
+                            <img className="w-5/6" src="/images/comp.jpg" alt="Танцевальные соревнования"/>
                         </div>
                         <div className="text-start md:w-1/2 py-4 md:p-6">
                             <h3 className="text-2xl pb-2 font-bold">Участия в соревнованиях</h3>

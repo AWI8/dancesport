@@ -1,17 +1,21 @@
 'use client'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 
 function Header() {
 
   const [showMenu, setShowMenu] = useState(false);
+  const router = usePathname();
+  const hed1 = `root-header ${showMenu ? 'bg-gray-900 transition duration-500' : ''}`;
+
 
   function toggleMenu() {
     setShowMenu(!showMenu);
   }
 
   return (
-    <header className={`md:flex z-40 justify-between items-center h-24 w-full absolute md:bg-transparent transition duration-500 ${showMenu ? 'bg-gray-900 transition duration-500' : 'delay-500'}} text-white`}>
+    <header className={router === "/" ? hed1:"header-other"}>
       <div className="flex justify-between items-center h-full">
         <Link href={'/'} className="font-bold mx-6">DanceSport.AM</Link>
         <button className="md:hidden px-3" onClick={toggleMenu}>
