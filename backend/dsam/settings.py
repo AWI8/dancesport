@@ -52,8 +52,8 @@ INSTALLED_APPS = [
     'crm_for_next', # приложение а-ля crm, папка в корне ./backend<-
 ]
 
-RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123'
-RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456'
+RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHAPK')
+RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHASK')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
