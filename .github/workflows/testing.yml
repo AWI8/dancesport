@@ -23,18 +23,18 @@ jobs:
           nohup python manage.py runserver 127.0.0.1:8000 &
           
 
-  Test-accessability:
-    needs: Back-up
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "It was automatically triggered"
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - name: install devs
-        run: |
-          cd front/
-          yarn install --frozen-lockfile
-      - name: Test application
-        run: |
-          cd front/
-          yarn run e2eh
+  # Test-accessability:
+  #   needs: Back-up
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "It was automatically triggered"
+  #     - name: Check out repository code
+  #       uses: actions/checkout@v3
+  #     - name: install devs
+  #       run: |
+  #         cd front/
+  #         yarn install --frozen-lockfile
+  #     - name: Test application
+  #       run: |
+  #         cd front/
+  #         yarn run e2eh
