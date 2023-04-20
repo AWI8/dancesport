@@ -1,5 +1,3 @@
-import { includes } from "cypress/types/lodash";
-
 describe('Main page access',()=>{
     it('Shoud been logo text',()=>{
         cy.visit('');

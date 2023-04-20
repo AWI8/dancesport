@@ -1344,6 +1344,11 @@ nanoid@^3.3.4:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
+next-recaptcha-v3@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/next-recaptcha-v3/-/next-recaptcha-v3-1.1.5.tgz#005b962ad8d919c3d6658bb046e75f1f8790bb97"
+  integrity sha512-CkhhGf4bSmy7/rnqOW9Wv55iO2tvZoOHvniDhVhX9hlBUmLTpEnQgnkc85ct9PyoBse6elQHUhzjg/c4z0yJbw==
+
 next@latest:
   version "13.2.3"
   resolved "https://registry.npmjs.org/next/-/next-13.2.3.tgz"
