@@ -30,14 +30,26 @@ services:
     build: 
       context: ./deployment/nginx/
     volumes:
+      - letsen:/etc/letsencrypt
       - static_volume:/usr/src/backend/staticfiles
     depends_on:
       - drf
       - njs_client
     ports:
     - 80:80
+  
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    volumes:
+      - letsen:/etc/letsencrypt
+      - certdir:/usr/src/certdir
+    command: certonly --webroot --webroot-path=/usr/src/certdir --email chekhonins@gmail.com --agree-tos --no-eff-email -d dancesport.am
 
 volumes:
   postgres_data:
   static_volume:
+  letsen:
+  certdir:
 

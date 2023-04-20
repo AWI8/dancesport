@@ -1,5 +1,5 @@
 FROM node:19.8-alpine3.16
-WORKDIR /app
+WORKDIR /usr/src/front
 COPY yarn.lock yarn.lock
 RUN yarn install --forzen-lockfile
 COPY . .
