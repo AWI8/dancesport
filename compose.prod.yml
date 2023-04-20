@@ -29,9 +29,11 @@ services:
     image: nginx
     build: 
       context: ./deployment/nginx/
+    restart: always
     volumes:
       - letsen:/etc/letsencrypt
       - static_volume:/usr/src/backend/staticfiles
+      - certdir:/usr/src/certdir
     depends_on:
       - drf
       - njs_client

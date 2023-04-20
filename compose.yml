@@ -10,37 +10,46 @@ services:
     env_file:
       - ./.env.dev
     build: ./backend
+    command: gunicorn dsam.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - ./backend/:/usr/src/app/
+      - static_volume:/usr/src/backend/staticfiles
     depends_on:
       - db
-    ports: 
-      - '8000:8000'
-    # expose:
-    #   - 8000
+    expose:
+      - 8000
 
   njs_client:
     build: front
     depends_on:
       - db
-    volumes:
-      - staticbuild:/app/out/
-    ports:          
-      - '3000:3000'
-    # expose:
-    #   - 3000
+    expose:
+      - 3000
 
   nginx:
     image: nginx
     build: 
       context: ./deployment/nginx/
+    volumes:
+      - letsen:/etc/letsencrypt
+      - static_volume:/usr/src/backend/staticfiles
     depends_on:
       - drf
       - njs_client
     ports:
-      - 8080:80
+    - 80:80
+  
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    volumes:
+      - letsen:/etc/letsencrypt
+      - certdir:/usr/src/certdir
+    command: certonly --webroot --webroot-path=/usr/src/certdir --email chekhonins@gmail.com --agree-tos --no-eff-email -d dancesport.am
 
 volumes:
   postgres_data:
-  staticbuild:
+  static_volume:
+  letsen:
+  certdir:
 
