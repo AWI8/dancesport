@@ -13,7 +13,7 @@ function Greetings() {
                         </h1>
                     </li>
                     <li className="text-center md:text-2xl text-xl text-white">
-                        <p>Добро пожаловать в, завораживающий <br /> дух мир танцев</p>
+                        <p>Добро пожаловать в, завораживающий <br /> дух - мир танцев</p>
                     </li>
                 </ul>
             </section>

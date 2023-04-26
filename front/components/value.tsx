@@ -30,7 +30,7 @@ function Value() {
                             <div className="flex justify-center">
                                 <img src="/svg/Event_agency_miracle.svg" className="w-24 h-24" alt="Магия танца. Волшебная палочка"/>
                             </div>
-                            <h2 className="text-center text-xl p-3 font-bold">Новыекачества</h2>
+                            <h2 className="text-center text-xl p-3 font-bold">Становимся лучше</h2>
                             <p className="text-center">Развитие новых физических и психоэмоциональных качеств. А именно: выносливость гибкость осанка, самоуверенность и другие</p>
                         </li>
                     </ul>
