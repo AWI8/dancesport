@@ -47,7 +47,7 @@ services:
     volumes:
       - letsen:/etc/letsencrypt
       - certdir:/usr/src/certdir
-    command: certonly --webroot --webroot-path=/usr/src/certdir --email chekhonins@gmail.com --agree-tos --no-eff-email -d dancesport.am
+    command: certonly --webroot --webroot-path=/usr/src/certdir --dry-run --stage --email chekhonins@gmail.com --agree-tos --no-eff-email -d dancesport.am
 
 volumes:
   postgres_data:
