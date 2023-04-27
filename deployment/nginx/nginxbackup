@@ -9,45 +9,24 @@ upstream njs_client {
 server {
 
     listen 80;
-    listen [::]:80;
-    server_name dancesport.am;
-
-    location /.well-known/acme-challenge/ {
-        allow all;
-        root usr/src/certdir;
-    }
+    server_name dancesport.local;
 
     location / {
-        return 301 https://$host$request_uri;
-    }
-}
-
-
-server {
-    listen 443 default_server ssl http2;
-    listen [::]:443 ssl http2;
-
-    server_name dancesport.am;
-
-    ssl_certificate /usr/src/certdir/live/example.org/fullchain.pem;
-    ssl_certificate_key /usr/src/certdir/live/example.org/privkey.pem;
-
-    location / {
-        proxy_pass https://njs_client;
+        proxy_pass http://njs_client;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
         proxy_redirect off;
     }
 
     location /admin {
-        proxy_pass https://hello_django;
+        proxy_pass http://hello_django;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
         proxy_redirect off;
     }
 
     location /api_fdsam {
-        proxy_pass https://hello_django;
+        proxy_pass http://hello_django;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
         proxy_redirect off;
