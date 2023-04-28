@@ -3,7 +3,6 @@ FROM python:3.10-alpine
 ENV HOME=/usr/src
 ENV APP_HOME=/usr/src/backend
 RUN mkdir $APP_HOME
-RUN mkdir $HOME/certdir
 RUN mkdir $APP_HOME/staticfiles
 WORKDIR $APP_HOME
 

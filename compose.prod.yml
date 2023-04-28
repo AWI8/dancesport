@@ -43,6 +43,8 @@ services:
   
   certbot:
     image: certbot/certbot
+    build: 
+      context: ./deployment/certbot
     depends_on:
       - nginx
     volumes:
