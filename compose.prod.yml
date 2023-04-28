@@ -39,6 +39,7 @@ services:
       - njs_client
     ports:
     - 80:80
+    - 443:433
   
   certbot:
     image: certbot/certbot
