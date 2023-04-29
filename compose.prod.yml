@@ -31,9 +31,9 @@ services:
       context: ./deployment/nginx/
     restart: always
     volumes:
-      - letsen:/etc/letsencrypt
       - static_volume:/usr/src/backend/staticfiles
-      - certbot:/usr/src/certbot
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     depends_on:
       - drf
       - njs_client
@@ -46,13 +46,11 @@ services:
     depends_on:
       - nginx
     volumes:
-      - letsen:/etc/letsencrypt
-      - certbot:/usr/src/certbot
-    command: certonly --webroot --webroot-path=/usr/src/certbot --dry-run --staging --email chekhonins@gmail.com --agree-tos --no-eff-email -d dancesport.am
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --dry-run --staging --email chekhonins@gmail.com --agree-tos --no-eff-email -d dancesport.am
 
 volumes:
   postgres_data:
   static_volume:
-  letsen:
-  certbot:
 
