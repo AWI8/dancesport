@@ -25,18 +25,20 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECRET_KEY = enviroment.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [
-    'http://localhost:3000',
-    'localhost',
-    '127.0.0.1',
-    '0.0.0.0',
-    'dancesport.local',
-    'dancesport.am'
+    'dancesport.am',
+    'https://dancesport.am',
+    'http://dancesport.am'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'dancesport.am',
+    'https://dancesport.am',
+    'http://dancesport.am'
+]
 
 # Application definition
 
@@ -167,13 +169,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:3000',
-    'http://localhost:3000',
-    'http://127.0.0.1:8000',
-    'http://localhost:8000',
-    'https://127.0.0.1:3000',
-    'https://localhost:3000',
-    'https://127.0.0.1:8000',
-    'https://localhost:8000'
+    'https://dancesport.am',
+    'http://dancesport.am'
     
 ]
