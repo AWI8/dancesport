@@ -4,8 +4,9 @@ describe('Main page access',()=>{
         cy.contains('DanceSport.AM')
         cy.url().should('include','')
     });
-    it('SingIn avaliable',()=>{
+    it('SingIn page avaliable',()=>{
         cy.visit('');
+        cy.get('a[href*="sing-in"]').click(); // it load /sin-in in vDom
         cy.get('a[href*="sing-in"]').click();
         cy.url().should('include','/sing-in');
     });
