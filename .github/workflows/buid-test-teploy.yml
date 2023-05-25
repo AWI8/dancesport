@@ -10,4 +10,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: Print workdir
-      run: pwd
+      run: |
+        pwd
+        ls
