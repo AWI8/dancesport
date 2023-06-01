@@ -23,23 +23,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = enviroment.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=0))
-if DEBUG:
-    from django.core.management.utils import get_random_secret_key
-    SECRET_KEY = get_random_secret_key()
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
-else:
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-    RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHAPK')
-    RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHASK')
-    
-
-
 
 ALLOWED_HOSTS = [
     'dancesport.am',
     'https://dancesport.am',
     'http://dancesport.am'
 ]
+
+if DEBUG:
+    from django.core.management.utils import get_random_secret_key
+    SECRET_KEY = get_random_secret_key()
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
+    RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHAPK')
+    RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHASK')
+else:
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    
 
 CSRF_TRUSTED_ORIGINS = [
     'https://dancesport.am',
