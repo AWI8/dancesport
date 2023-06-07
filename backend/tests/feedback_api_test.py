@@ -8,7 +8,7 @@ class APITestCase(unittest.TestCase):
 
     def test_create_feedback(self):
         url = self.base_url + 'feedback/create/'
-        token = os.environ.get('RECAPTCHASK')
+        token = os.environ.get('RECAPTCHAPK')
         print(token)
         data = {
             'name': 'TestCaseDEVlocal',

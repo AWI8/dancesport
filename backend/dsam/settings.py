@@ -36,14 +36,39 @@ if DEBUG:
     ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
     RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHAPK')
     RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHASK')
+    CSRF_TRUSTED_ORIGINS = [
+        'https://127.0.0.1:8000',
+        'http://127.0.0.1:8000'
+    ]
+    CORS_ALLOWED_ORIGINS = [
+        'https://127.0.0.1:8000',
+        'http://127.0.0.1:8000'
+    ]
+    CORS_ALLOW_HEADERS = [
+        'Content-Type',
+        'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Methods',
+        'X-CSRFToken',
+    ]
 else:
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    CSRF_TRUSTED_ORIGINS = [
+        'https://dancesport.am',
+        'http://dancesport.am'
+    ]
+    CORS_ALLOWED_ORIGINS = [
+        'https://dancesport.am',
+        'http://dancesport.am'
+    ]
+    CORS_ALLOW_HEADERS = [
+        'Content-Type',
+        'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Methods',
+        'X-CSRFToken',
+    ]
     
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://dancesport.am',
-    'http://dancesport.am'
-]
+
 
 # Application definition
 
@@ -55,12 +80,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'captcha',
     'rest_framework', # Rest API в django
     'crm_for_next', # приложение а-ля crm, папка в корне ./backend<-
 ]
-
-if DEBUG:
-    INSTALLED_APPS.append('captcha')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -163,17 +186,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_METHODS = [
     'POST',
     'GET'
-]
-
-CORS_ALLOW_HEADERS = [
-    'Content-Type',
-    'Access-Control-Allow-Origin',
-    'Access-Control-Allow-Methods',
-    'X-CSRFToken',
-]
-
-CORS_ALLOWED_ORIGINS = [
-    'https://dancesport.am',
-    'http://dancesport.am'
-    
 ]
